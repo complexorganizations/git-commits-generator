@@ -15,7 +15,7 @@ func main() {
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
 		cmd.Run()
 	}
-	cmd = exec.Command("git", "push")
+	cmd := exec.Command("git", "push")
 	cmd.Run()
 }
 
