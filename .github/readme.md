@@ -1,4 +1,4 @@
-### dotfiles
+### Git commits generator
 
 ```
 for i in {1..500}; do ./git-commits-generator; done
