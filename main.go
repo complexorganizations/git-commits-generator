@@ -8,15 +8,15 @@ import (
 )
 
 func main() {
-	for {
+	for loop := 1; loop <= 1000000; loop++ {
 		ioutil.WriteFile("FileName", []byte(randomString(1024)), 0644)
 		cmd := exec.Command("git", "add", "FileName")
 		cmd.Run()
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
 		cmd.Run()
-		cmd = exec.Command("git", "push")
-		cmd.Run()
 	}
+	cmd = exec.Command("git", "push")
+	cmd.Run()
 }
 
 func randomString(bytesSize int) string {
