@@ -4,11 +4,25 @@ import (
 	"crypto/rand"
 	"fmt"
 	"io/ioutil"
+	"log"
+	"os"
 	"os/exec"
 )
 
+var (
+	numberOfCommits = "1000000"
+)
+
+func commandsRequirementsCheck() {
+	if !commandExists("git") {
+		log.Println("Error: Git was not discovered in the system.")
+		os.Exit(0)
+	}
+}
+
 func main() {
-	for loop := 1; loop <= 1000000; loop++ {
+	commandsRequirementsCheck()
+	for loop := 1; loop <= numberOfCommits; loop++ {
 		ioutil.WriteFile("FileName", []byte(randomString(1024)), 0644)
 		cmd := exec.Command("git", "add", "FileName")
 		cmd.Run()
@@ -24,4 +38,9 @@ func randomString(bytesSize int) string {
 	rand.Read(randomBytes)
 	randomString := fmt.Sprintf("%X", randomBytes)
 	return randomString
+}
+
+func commandExists(cmd string) bool {
+	_, err := exec.LookPath(cmd)
+	return err == nil
 }
