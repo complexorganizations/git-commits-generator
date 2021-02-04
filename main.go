@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	numberOfCommits = "1000000"
+	numberOfCommits = 1000000
 )
 
 func commandsRequirementsCheck() {
