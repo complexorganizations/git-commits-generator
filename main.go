@@ -11,6 +11,7 @@ import (
 
 var (
 	numberOfCommits = 1000000
+	commitFileName  = "file"
 )
 
 func main() {
@@ -27,8 +28,8 @@ func commandsRequirementsCheck() {
 
 func generateCommits() {
 	for loop := 1; loop <= numberOfCommits; loop++ {
-		ioutil.WriteFile("FileName", []byte(randomString(512)), 0644)
-		cmd := exec.Command("git", "add", "FileName")
+		ioutil.WriteFile(commitFileName, []byte(randomString(512)), 0644)
+		cmd := exec.Command("git", "add", commitFileName)
 		cmd.Run()
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
 		cmd.Run()
