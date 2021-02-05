@@ -27,7 +27,7 @@ func commandsRequirementsCheck() {
 
 func generateCommits() {
 	for loop := 1; loop <= numberOfCommits; loop++ {
-		ioutil.WriteFile("FileName", []byte(randomString(1024)), 0644)
+		ioutil.WriteFile("FileName", []byte(randomString(512)), 0644)
 		cmd := exec.Command("git", "add", "FileName")
 		cmd.Run()
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
