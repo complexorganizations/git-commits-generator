@@ -1,7 +1,7 @@
 ### Git commits generator
 
 ```
-for i in {1..1000}; do ./git-commits-generator; done
+for i in {1..100}; do ./git-commits-generator; done
 ```
 
 ---
