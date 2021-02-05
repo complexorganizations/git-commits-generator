@@ -13,7 +13,11 @@ var (
 	numberOfCommits = 1000000
 )
 
-// Check for GIT
+func main() {
+	commandsRequirementsCheck()
+	generateCommits()
+}
+
 func commandsRequirementsCheck() {
 	if !commandExists("git") {
 		log.Println("Error: Git was not discovered in the system.")
@@ -21,9 +25,7 @@ func commandsRequirementsCheck() {
 	}
 }
 
-// Run the app
-func main() {
-	commandsRequirementsCheck()
+func generateCommits() {
 	for loop := 1; loop <= numberOfCommits; loop++ {
 		ioutil.WriteFile("FileName", []byte(randomString(1024)), 0644)
 		cmd := exec.Command("git", "add", "FileName")
@@ -35,7 +37,6 @@ func main() {
 	cmd.Run()
 }
 
-// Generate Random String
 func randomString(bytesSize int) string {
 	randomBytes := make([]byte, bytesSize)
 	rand.Read(randomBytes)
@@ -43,7 +44,6 @@ func randomString(bytesSize int) string {
 	return randomString
 }
 
-// Check if a command exists
 func commandExists(cmd string) bool {
 	_, err := exec.LookPath(cmd)
 	return err == nil
