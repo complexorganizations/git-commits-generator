@@ -16,8 +16,11 @@ git-commits-generator
 ---
 ### Q&A
 
-Why do i have to manually push the commits?
-- Git limits the ammounts of push you can do per day, so this is left up to the user.
+Why do I have to push the commits manually?
+- Git restricts the push quantities, so this is left for the user to push manually.
+
+Can this be used to launch a Git DDoS attack?
+- I'm not sure, and it's not meant for that, so don't do it, please.
 
 ---
 ### Author
