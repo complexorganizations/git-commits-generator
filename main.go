@@ -24,7 +24,7 @@ func commandsRequirementsCheck() {
 func generateCommits() {
 	for {
 		ioutil.WriteFile("Delete-This-File", []byte(randomString(128)), 0644)
-		cmd := exec.Command("git", "add", commitFileName)
+		cmd := exec.Command("git", "add", "Delete-This-File")
 		cmd.Run()
 		cmd = exec.Command("git", "commit", "-m", randomString(10))
 		cmd.Run()
