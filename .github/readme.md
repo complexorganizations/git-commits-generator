@@ -1,7 +1,12 @@
 ### Git commits generator
 
+Download the latest binary
 ```
-for i in {1..100}; do ./git-commits-generator; done
+go get -v github.com/complexorganizations/git-commits-generator
+```
+Move the binary to your repo folder, run the binary
+```
+git-commits-generator
 ```
 
 ---
