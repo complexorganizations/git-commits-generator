@@ -6,37 +6,13 @@ for i in {1..100}; do ./git-commits-generator; done
 
 ---
 ### Features
-- 
-- 
-- 
-- 
+- Generate validated git commits
 
 ---
 ### Q&A
 
-How
-- 
-- 
-- 
-- 
-
-Which
-- 
-- 
-- 
--
-
-Is
-- 
-- 
-- 
--
-
-How 
-- 
-- 
-- 
--
+Why do i have to manually push the commits?
+- Git limits the ammounts of push you can do per day, so this is left up to the user.
 
 ---
 ### Author
