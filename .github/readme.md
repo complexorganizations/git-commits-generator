@@ -1,17 +1,8 @@
 ### Git commits generator
 
-Download the latest binary
-```
-go get -v github.com/complexorganizations/git-commits-generator
-```
-Move the binary to your repo folder, run the binary
-```
-git-commits-generator
-```
-
 ---
 ### Features
-- Generate validated git commits
+- Generate git commits
 
 ---
 ### Q&A
