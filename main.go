@@ -5,8 +5,21 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 )
+
+var (
+	fileName      string
+	commitMessege string
+	byteSize      string
+)
+
+func init() {
+	fileName = randomString(10)
+	commitMessege = randomString(10)
+	byteSize = randomString(128)
+}
 
 func main() {
 	commandsRequirementsCheck()
@@ -15,17 +28,18 @@ func main() {
 
 func commandsRequirementsCheck() {
 	if !commandExists("git") {
-		log.Fatal("Error: Git was not discovered in the system.")
+		log.Fatal("Error: The application git was not found in the system.")
 	}
 }
 
 func generateCommits() {
 	for {
-		ioutil.WriteFile("Delete-This-File", []byte(randomString(128)), 0644)
-		cmd := exec.Command("git", "add", "Delete-This-File")
+		ioutil.WriteFile(fileName, []byte(byteSize), 0644)
+		cmd := exec.Command("git", "add", fileName)
 		cmd.Run()
-		cmd = exec.Command("git", "commit", "-m", randomString(10))
+		cmd = exec.Command("git", "commit", "-m", commitMessege)
 		cmd.Run()
+		os.Remove(fileName)
 	}
 }
 
@@ -37,6 +51,10 @@ func randomString(bytesSize int) string {
 }
 
 func commandExists(cmd string) bool {
-	_, err := exec.LookPath(cmd)
-	return err == nil
+	appName, err := exec.LookPath(cmd)
+	if err != nil {
+		return false
+	}
+	_ = appName // variable declared and not used
+	return true
 }
