@@ -11,6 +11,7 @@ import (
 var userInput string
 var commitCount int
 var removeThisFile string
+var commitCount = 10000
 
 func init() {
 	if !commandExists("git") {
@@ -23,7 +24,7 @@ func main() {
 }
 
 func generateCommits() {
-	for loop := 0; loop <= 10000; loop++ {
+	for loop := 0; loop <= commitCount; loop++ {
 		removeThisFile = "removeThisFile"
 		ioutil.WriteFile(removeThisFile, []byte(randomString(256)), 0644)
 		cmd := exec.Command("git", "add", removeThisFile)
