@@ -18,7 +18,7 @@ func init() {
 	if !commandExists("git") {
 		log.Fatal("Error: The application git was not found in the system.")
 	}
-	commitCount = 1000000
+	commitCount = 10000
 	if len(os.Args) > 1 {
 		userInput = os.Args[1]
 		commitCount, _ := strconv.ParseInt(userInput, 0, 0)
@@ -41,7 +41,7 @@ func generateCommits() {
 	}
 	cmd := exec.Command("git", "push")
 	cmd.Run()
-	os.Remove(removeThisFile)
+	main()
 }
 
 func randomString(bytesSize int) string {
