@@ -5,9 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
+	"strconv"
 )
 
+var userInput string
 var commitCount int
 
 func init() {
@@ -16,7 +19,9 @@ func init() {
 	}
 	commitCount = 1000000
 	if len(os.Args) > 1 {
-		commitCount = os.Args[1]
+		userInput = os.Args[1]
+		commitCount, _ := strconv.ParseInt(userInput, 0, 0)
+		_ = commitCount
 	}
 }
 
@@ -33,7 +38,7 @@ func generateCommits() {
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
 		cmd.Run()
 	}
-	cmd = exec.Command("git", "push")
+	cmd := exec.Command("git", "push")
 	cmd.Run()
 }
 
