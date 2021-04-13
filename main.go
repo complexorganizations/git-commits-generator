@@ -32,7 +32,9 @@ func generateCommits() {
 		cmd.Run()
 		log.Println("Commit:", loop, "/", commitCount)
 	}
-	cmd := exec.Command("git", "push")
+	cmd := exec.Command("git", "pull")
+	cmd.Run()
+	cmd = exec.Command("git", "push")
 	cmd.Run()
 	main()
 }
