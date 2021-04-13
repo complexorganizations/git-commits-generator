@@ -8,9 +8,10 @@ import (
 	"os/exec"
 )
 
-var userInput string
-var removeThisFile string
-var commitCount = 100000
+var (
+	removeThisFile = "removeThisFile"
+	commitCount    = 100000
+)
 
 func init() {
 	if !commandExists("git") {
@@ -24,7 +25,6 @@ func main() {
 
 func generateCommits() {
 	for loop := 0; loop <= commitCount; loop++ {
-		removeThisFile = "removeThisFile"
 		ioutil.WriteFile(removeThisFile, []byte(randomString(256)), 0644)
 		cmd := exec.Command("git", "add", removeThisFile)
 		cmd.Run()
