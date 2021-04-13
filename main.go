@@ -11,7 +11,7 @@ import (
 var userInput string
 var commitCount int
 var removeThisFile string
-var commitCount = 10000
+var commitCount = 100000
 
 func init() {
 	if !commandExists("git") {
