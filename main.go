@@ -10,7 +10,7 @@ import (
 
 var (
 	removeThisFile = "removeThisFile"
-	commitCount    = 1000
+	commitCount    = 10000
 )
 
 func init() {
@@ -49,6 +49,6 @@ func commandExists(cmd string) bool {
 	if err != nil {
 		return false
 	}
-	_ = appName // variable declared and not used
+	_ = appName
 	return true
 }
