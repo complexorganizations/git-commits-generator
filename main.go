@@ -9,7 +9,6 @@ import (
 )
 
 var userInput string
-var commitCount int
 var removeThisFile string
 var commitCount = 100000
 
