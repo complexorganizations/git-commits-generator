@@ -20,12 +20,11 @@ func main() {
 
 func generateCommits() {
 	for {
-		ioutil.WriteFile("Delete-This-File", []byte(randomString(128)), 0644)
-		cmd := exec.Command("git", "add", "Delete-This-File")
+		removeThisFile := "removeThisFile"
+		ioutil.WriteFile(removeThisFile, []byte(randomString(256)), 0644)
+		cmd := exec.Command("git", "add", removeThisFile)
 		cmd.Run()
-		cmd = exec.Command("git", "commit", "-m", randomString(10))
-		cmd.Run()
-		cmd = exec.Command("git", "push")
+		cmd = exec.Command("git", "commit", "-m", randomString(25))
 		cmd.Run()
 	}
 }
