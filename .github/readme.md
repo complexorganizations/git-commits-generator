@@ -7,10 +7,7 @@
 ---
 ### Q&A
 
-Why do I have to push the commits manually?
-- Git restricts the push quantities, so this is left for the user to push manually.
-
-Can this be used to launch a Git DDoS attack?
+Can this be used to launch a DDoS attack against a git serivce?
 - I'm not sure, and it's not meant for that, so don't do it, please.
 
 ---
