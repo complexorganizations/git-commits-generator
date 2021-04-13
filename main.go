@@ -10,7 +10,7 @@ import (
 
 var (
 	removeThisFile = "removeThisFile"
-	commitCount    = 1000
+	commitCount    = 10000
 )
 
 func init() {
@@ -32,7 +32,9 @@ func generateCommits() {
 		cmd.Run()
 		log.Println("Commit:", loop, "/", commitCount)
 	}
-	cmd := exec.Command("git", "push")
+	cmd := exec.Command("git", "pull")
+	cmd.Run()
+	cmd = exec.Command("git", "push")
 	cmd.Run()
 	main()
 }
@@ -49,6 +51,6 @@ func commandExists(cmd string) bool {
 	if err != nil {
 		return false
 	}
-	_ = appName // variable declared and not used
+	_ = appName
 	return true
 }
