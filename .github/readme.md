@@ -7,8 +7,8 @@
 ---
 ### Q&A
 
-Can this be used to launch a DDoS attack against a git serivce?
-- I'm not sure, and it's not meant for that, so don't do it, please.
+Is it possible to use this to initiate a DoS attack on a git service?
+- I'm not sure, and it's not intended for that, so please don't do it.
 
 ---
 ### Author
