@@ -8,9 +8,15 @@ import (
 	"os/exec"
 )
 
+var commitCount int
+
 func init() {
 	if !commandExists("git") {
 		log.Fatal("Error: The application git was not found in the system.")
+	}
+	commitCount = 1000000
+	if len(os.Args) > 1 {
+		commitCount = os.Args[1]
 	}
 }
 
@@ -19,7 +25,7 @@ func main() {
 }
 
 func generateCommits() {
-	for {
+	for loop := 0; loop <= commitCount; loop++ {
 		removeThisFile := "removeThisFile"
 		ioutil.WriteFile(removeThisFile, []byte(randomString(256)), 0644)
 		cmd := exec.Command("git", "add", removeThisFile)
@@ -27,6 +33,8 @@ func generateCommits() {
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
 		cmd.Run()
 	}
+	cmd = exec.Command("git", "push")
+	cmd.Run()
 }
 
 func randomString(bytesSize int) string {
