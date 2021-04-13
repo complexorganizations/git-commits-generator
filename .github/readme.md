@@ -10,6 +10,9 @@
 Is it possible to use this to initiate a DoS attack on a git service?
 - I'm not sure, and it's not intended for that, so please don't do it.
 
+What is the point of this?
+- What I wanted was to be at the top of the list of people with the most commitments.
+
 ---
 ### Author
 
