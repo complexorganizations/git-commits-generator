@@ -10,7 +10,7 @@ import (
 
 var (
 	removeThisFile = "removeThisFile"
-	commitCount    = 1000
+	commitCount    = 100
 )
 
 func init() {
