@@ -3,14 +3,14 @@ package main
 import (
 	"crypto/rand"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"os/exec"
 )
 
 var (
 	removeThisFile = "removeThisFile"
-	commitCount    = 10000
+	commitCount    = 1000
 )
 
 func init() {
@@ -25,7 +25,7 @@ func main() {
 
 func generateCommits() {
 	for loop := 0; loop <= commitCount; loop++ {
-		ioutil.WriteFile(removeThisFile, []byte(randomString(256)), 0644)
+		os.WriteFile(removeThisFile, []byte(randomString(256)), 0644)
 		cmd := exec.Command("git", "add", removeThisFile)
 		cmd.Run()
 		cmd = exec.Command("git", "commit", "-m", randomString(25))
