@@ -40,7 +40,7 @@ func generateCommits() {
 	cmd.Run()
 	cmd = exec.Command("git", "push")
 	cmd.Run()
-	main()
+	generateCommits()
 }
 
 func randomString(bytesSize int) string {
