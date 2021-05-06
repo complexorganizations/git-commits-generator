@@ -2,6 +2,7 @@ package main
 
 import (
 	"crypto/rand"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -10,13 +11,16 @@ import (
 
 var (
 	removeThisFile = "removeThisFile"
-	commitCount    = 10000
+	commitCount    int
 )
 
 func init() {
 	if !commandExists("git") {
 		log.Fatal("Error: The application git was not found in the system.")
 	}
+	tempCommitCount := flag.Int("commit", 10000, "The ammount of commits")
+	flag.Parse()
+	commitCount = *tempCommitCount
 }
 
 func main() {
