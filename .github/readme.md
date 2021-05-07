@@ -5,6 +5,28 @@
 - Generate git commits
 
 ---
+### How to use?
+
+Note: Rmove (SSH|GPG) passwords
+
+Lets start by forking and cloning the repo.
+```
+git clone https://github.com/[USERNAME]/git-commits-generator
+```
+Lets go to the `git-commits-generator` folder
+```
+cd git-commits-generator/
+```
+Lets build the app
+```
+go build .
+```
+Lets run the app
+```
+./git-commits-generator -commit=1000
+```
+
+---
 ### Q&A
 
 Is it possible to use this to initiate a DoS attack on a git service?
