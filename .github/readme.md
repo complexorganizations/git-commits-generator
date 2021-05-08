@@ -23,7 +23,7 @@ go build .
 ```
 Lets run the app
 ```
-./git-commits-generator -commit=1000
+./git-commits-generator -commit=1000 -file=remove-this-file
 ```
 
 ---
