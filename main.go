@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	removeThisFile = "removeThisFile"
+	removeThisFile string
 	commitCount    int
 )
 
@@ -19,8 +19,10 @@ func init() {
 		log.Fatal("Error: The application git was not found in the system.")
 	}
 	tempCommitCount := flag.Int("commit", 10000, "The ammount of commits")
+	tempRemoveThisFile := flag.String("file", "removeThisFile", "The ammount of commits")
 	flag.Parse()
 	commitCount = *tempCommitCount
+	removeThisFile = *tempRemoveThisFile
 }
 
 func main() {
