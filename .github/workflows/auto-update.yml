@@ -17,7 +17,7 @@ jobs:
       - name: Build Test
         run: go build -v .
       - name: Generating new resources.
-        run: ./git-commits-generator -commit=1
+        run: ./git-commits-generator
       - name: Update resources
         run: |
           git config user.name github-actions
