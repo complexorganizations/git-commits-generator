@@ -20,7 +20,7 @@ func init() {
 	// Make sure it's all installed on your computer
 	commandExists("git")
 	// Take user flags
-	tempCommitCount := flag.Int("commit", 100000, "The ammount of commits")
+	tempCommitCount := flag.Int("commit", 1, "The ammount of commits")
 	flag.Parse()
 	commitCount = *tempCommitCount
 }
