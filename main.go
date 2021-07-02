@@ -45,12 +45,6 @@ func generateCommits() {
 		handleErrors(err)
 		log.Println("Commit:", loop, "/", commitCount)
 	}
-	// git push the most recent updates
-	cmd = exec.Command("git", "push")
-	err = cmd.Run()
-	handleErrors(err)
-	// Start a loop from the beginning
-	generateCommits()
 }
 
 // Generate a random string
